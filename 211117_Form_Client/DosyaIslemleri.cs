@@ -30,7 +30,7 @@ namespace _211117_Form_Client
             String sohbetadresi = @"C:\Users\" + Environment.UserName + @"\NaberChat\" + kullaniciadi + @"\" + kisi + ".txt";
             string deger=" ";
             Console.WriteLine(sohbetadresi);
-            if (File.Exists(sohbetadresi))//dosya var mı yok mu
+            if (File.Exists(sohbetadresi))//dosya var mı yok mu?
             {
                 StreamReader oku = new StreamReader(sohbetadresi);
                 deger = oku.ReadLine();

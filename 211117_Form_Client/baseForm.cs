@@ -40,7 +40,7 @@ namespace _211117_Form_Client
             }
             catch (Exception)
             {
-                MessageBox.Show("Servera Baglanirken Hata OLustu.");
+                MessageBox.Show("Servera Baglanirken Hata OLustu. ");
                 this.Close();
             }
             labeller = new labels(this,io);

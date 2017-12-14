@@ -29,7 +29,7 @@ namespace _211117_Form_Client
             {
                 //192.168.1.185
                 //istemci.Connect("127.0.0.1", 8888); // Baglanacagimiz server a ve portu yaziyoruz.
-                istemci.Connect("192.168.1.185", 8888);
+                istemci.Connect("127.0.0.1", 8888);
                 serverAkim = istemci.GetStream(); // Mesaj akımımızı başlatiyoruz.
                 servera_yolla(kullanici_adi); //servara ben geldim diyoruz.
                 ctThread = new Thread(gelenmesaj);

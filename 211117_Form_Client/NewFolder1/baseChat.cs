@@ -1,28 +1,35 @@
 ﻿using System;
-using System.Windows.Forms;
-using System.Text;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
 using System.Net.Sockets;
+using System.Text;
 using System.Threading;
-using System.IO;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
-namespace _211117_Form_Client
+namespace Client
 {
-    public partial class baseForm : Form
+    public partial class baseChat : Form
     {
-        string kullanici_adi,verioku;
         TcpClient istemci = new TcpClient(); // TcpClient nesnesi olusturuluyor.
         NetworkStream serverAkim;
         Thread ctThread;
         byte[] readByte;
-        labels labeller;
+        string kullaniciadi,verioku;
         DosyaIslemleri io;
-        public baseForm(string kullanici_adi)
+        labels labeller;
+        baseKullanici bsKullanici;
+        public baseChat(string kullaniciadi)
         {
             InitializeComponent();
-            this.kullanici_adi = kullanici_adi;
+            this.kullaniciadi = kullaniciadi;
         }
-        public baseForm() { }
-        private void baseForm_Load(object sender, EventArgs e)
+        public baseChat() { }
+
+        private void baseChat_Load(object sender, EventArgs e)
         {
             try
             {
@@ -30,11 +37,11 @@ namespace _211117_Form_Client
                 //istemci.Connect("127.0.0.1", 8888); // Baglanacagimiz server a ve portu yaziyoruz.
                 istemci.Connect("127.0.0.1", 8888);
                 serverAkim = istemci.GetStream(); // Mesaj akımımızı başlatiyoruz.
-                servera_yolla(kullanici_adi); //servara ben geldim diyoruz.
+                servera_yolla(kullaniciadi); //servara ben geldim diyoruz.
                 ctThread = new Thread(gelenmesaj);
                 ctThread.Start();
 
-                io = new DosyaIslemleri(this,kullanici_adi);
+                io = new DosyaIslemleri(this, kullaniciadi);
                 io.dosyaOlustur();
             }
             catch (Exception)
@@ -42,8 +49,9 @@ namespace _211117_Form_Client
                 MessageBox.Show("Servera Baglanirken Hata OLustu. ");
                 this.Close();
             }
-            labeller = new labels(this,io);
+            labeller = new labels(bsKullanici,this,io);
             labeller.labelleri_olustur();
+
         }
         private void mesaj()
         {
@@ -54,9 +62,9 @@ namespace _211117_Form_Client
                 if (!verioku.Contains("3$*$*3"))
                 {
                     string[] parcalar = verioku.Split(':');
-                    if (grb_kisi.Text==parcalar[0].Trim())
+                    if (grb_kisi.Text == parcalar[0].Trim())
                     {
-                        rtx_msjlar.Text += verioku+"\n";
+                        rtx_msjlar.Text += verioku + "\n";
                         io.sohbettxtYaz(parcalar[0].Trim(), rtx_msjlar.Lines[rtx_msjlar.Lines.Length - 2]);
                     }
                     else io.sohbettxtYaz(parcalar[0].Trim(), verioku);
@@ -76,7 +84,7 @@ namespace _211117_Form_Client
                 {
                     byte[] readByte = new byte[istemci.ReceiveBufferSize];
                     serverAkim.Read(readByte, 0, readByte.Length);
-                    verioku = Encoding.ASCII.GetString(readByte).Replace("\0",null);
+                    verioku = Encoding.ASCII.GetString(readByte).Replace("\0", null);
                     mesaj();
                 }
             }
@@ -96,8 +104,8 @@ namespace _211117_Form_Client
         }
         private void btn_msj_gndr_Click(object sender, EventArgs e)
         {
-            rtx_msjlar.Text += kullanici_adi+" : "+txt_msj.Text+"\n";
-            servera_yolla(grb_kisi.Text + "..444.." +kullanici_adi+" : "+txt_msj.Text); //servara mesajı yollarken yollanan kisiyide ekleyip yolluyoruz ki servar kime gonderıldıgını bilsin.
+            rtx_msjlar.Text += kullaniciadi + " : " + txt_msj.Text + "\n";
+            servera_yolla(grb_kisi.Text + "..444.." + kullaniciadi + " : " + txt_msj.Text); //servara mesajı yollarken yollanan kisiyide ekleyip yolluyoruz ki servar kime gonderıldıgını bilsin.
             txt_msj.Clear();
             txt_msj.Focus();
             io.sohbettxtYaz(grb_kisi.Text, rtx_msjlar.Lines[rtx_msjlar.Lines.Length - 2]);
@@ -111,7 +119,7 @@ namespace _211117_Form_Client
             }
             catch (Exception)
             {
-                
+
             }
         }
         private void baseForm_FormClosed(object sender, FormClosedEventArgs e)
@@ -121,4 +129,8 @@ namespace _211117_Form_Client
             serverAkim.Close();
             ctThread.Abort();
             Application.Exit();
-        }}}
+        }
+    }
+}
+    
+

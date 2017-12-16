@@ -50,5 +50,10 @@ namespace _211117_Form_Client
                 }
             }
         }
+
+        private void login_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

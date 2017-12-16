@@ -69,7 +69,7 @@
             // 
             this.grb_kisiler.BackColor = System.Drawing.SystemColors.Control;
             this.grb_kisiler.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.grb_kisiler.Location = new System.Drawing.Point(16, 12);
+            this.grb_kisiler.Location = new System.Drawing.Point(12, 21);
             this.grb_kisiler.Name = "grb_kisiler";
             this.grb_kisiler.Size = new System.Drawing.Size(196, 347);
             this.grb_kisiler.TabIndex = 3;

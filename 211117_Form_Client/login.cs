@@ -40,9 +40,8 @@ namespace _211117_Form_Client
                 try
                 {
                     baseForm form2 = new baseForm(txt_kullanici.Text);
-                    form2.Show();
+                    form2.Visible = true;
                     this.Hide();
-
                 }
                 catch (Exception z)
                 {

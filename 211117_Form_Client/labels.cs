@@ -28,10 +28,11 @@ namespace _211117_Form_Client
                 lbl_kisiler[i].Name = "lbl_kisi" + i;
                 lbl_kisiler[i].Visible = true;
                 lbl_kisiler[i].Left = 10;
+                lbl_kisiler[i].BackColor= System.Drawing.Color.Silver;
                 lbl_kisiler[i].BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-                lbl_kisiler[i].Font = new System.Drawing.Font("Lucida Sans Unicode", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-                lbl_kisiler[i].Location = new System.Drawing.Point(10, 40 + i * 50);
-                lbl_kisiler[i].Size = new System.Drawing.Size(82, 27);
+                lbl_kisiler[i].Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+                lbl_kisiler[i].Location = new System.Drawing.Point(5, 12 + i * 35);
+                lbl_kisiler[i].Size = new System.Drawing.Size(313, 30);
                 lbl_kisiler[i].Text = "";
                 lbl_kisiler[i].Click += Labels_Click;// label'imize clilck eventi ekledik.
                 sl.grb_kisiler.Controls.Add(lbl_kisiler[i]);
@@ -51,6 +52,7 @@ namespace _211117_Form_Client
             if (kisiler.Length > 1)
             {
                 sl.grb_kisiler.Visible = true;
+                sl.pictureBox1.Visible = false;
                 sl.lbl_kimseyok.Visible = false;
                 for (int i = 0; i < lbl_kisiler.Length; i++)
                 {
@@ -67,6 +69,7 @@ namespace _211117_Form_Client
             }
             else
             {
+                sl.pictureBox1.Visible = true;
                 sl.lbl_kimseyok.Visible = true;
                 sl.grb_kisiler.Visible = false;
                 //frm.grb_kisi.Text = "";

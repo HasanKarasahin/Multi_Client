@@ -119,6 +119,8 @@ namespace _211117_Form_Client
             this.Opacity = 0;
         }
 
+ 
+
         private void baseForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             SV.servera_yolla("3*3"); // servara ben ccikiyorum diyoruz.

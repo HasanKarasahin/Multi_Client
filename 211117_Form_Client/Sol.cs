@@ -12,19 +12,23 @@ namespace _211117_Form_Client
 {
     public partial class Sol : Form
     {
+        ServeraYolla SV;
         public Sol()
         {
             InitializeComponent();
+            SV = new ServeraYolla();
         }
-        new int Width = 1900;
-        new int Height = 1080;
         private void Sol_Load(object sender, EventArgs e)
         {
-            Rectangle ClientCoz = new Rectangle();
-            ClientCoz = Screen.GetBounds(ClientCoz);
-            float WidthOran = ((float)ClientCoz.Width / (float)Width);
-            float HeightOran = ((float)ClientCoz.Height / (float)Height);
-            this.Scale(WidthOran, HeightOran);
+           
+        }
+        private void Sol_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            SV.servera_yolla("3*3"); // servara ben ccikiyorum diyoruz.
+            //istemci.Close();
+            //baglanti.getserverAkim().Close();
+            //ctThread.Abort();
+            Application.Exit();
         }
     }
 }

@@ -24,18 +24,11 @@ namespace _211117_Form_Client
             this.kullanici_adi = kullanici_adi;
         }
         public baseForm() { }
-        new int Width = 1900;
-        new int Height = 1080;
         private void baseForm_Load(object sender, EventArgs e)
         {
-            Rectangle ClientCoz = new Rectangle();
-            ClientCoz = Screen.GetBounds(ClientCoz);
-            float WidthOran = ((float)ClientCoz.Width / (float)Width);
-            float HeightOran = ((float)ClientCoz.Height / (float)Height);
-            this.Scale(WidthOran, HeightOran);
             try
-            {
-                baglanti = new Baglanti("127.0.0.1",8888);
+            {//
+                baglanti = new Baglanti("192.168.43.92",8888);
                 istemci=baglanti.getIstemci();
                  baglanti.getserverAkim();              
                 SV = new ServeraYolla(baglanti.getserverAkim());
@@ -125,15 +118,4 @@ namespace _211117_Form_Client
         private void button1_Click(object sender, EventArgs e)
         {
             this.Opacity = 0;
-        }
-
- 
-
-        private void baseForm_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            SV.servera_yolla("3*3"); // servara ben ccikiyorum diyoruz.
-            istemci.Close();
-            baglanti.getserverAkim().Close();
-            ctThread.Abort();
-            Application.Exit();
-        }}}
+        }}}}

@@ -41,9 +41,9 @@
             // grb_kisiler
             // 
             this.grb_kisiler.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.grb_kisiler.Location = new System.Drawing.Point(0, 106);
+            this.grb_kisiler.Location = new System.Drawing.Point(0, 117);
             this.grb_kisiler.Name = "grb_kisiler";
-            this.grb_kisiler.Size = new System.Drawing.Size(323, 611);
+            this.grb_kisiler.Size = new System.Drawing.Size(323, 600);
             this.grb_kisiler.TabIndex = 7;
             this.grb_kisiler.TabStop = false;
             // 
@@ -100,6 +100,7 @@
             this.MaximizeBox = false;
             this.Name = "Sol";
             this.Text = "N\'aberÇet";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Sol_FormClosing);
             this.Load += new System.EventHandler(this.Sol_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);

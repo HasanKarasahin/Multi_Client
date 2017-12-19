@@ -9,10 +9,15 @@ namespace _211117_Form_Client
 {
     class ServeraYolla
     {
-        NetworkStream serverAkim;
-        public ServeraYolla(NetworkStream serverAkim)
+        public static NetworkStream serverAkim;
+        public ServeraYolla(NetworkStream serverAkima)
         {
-            this.serverAkim = serverAkim;
+            if(serverAkim==null)
+            serverAkim = serverAkima;
+        }
+        public ServeraYolla()
+        {
+
         }
         public void servera_yolla(string mesaj)
         {

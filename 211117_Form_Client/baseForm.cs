@@ -4,6 +4,7 @@ using System.Text;
 using System.Net.Sockets;
 using System.Threading;
 using System.IO;
+using System.Drawing;
 
 namespace _211117_Form_Client
 {
@@ -23,8 +24,15 @@ namespace _211117_Form_Client
             this.kullanici_adi = kullanici_adi;
         }
         public baseForm() { }
+        new int Width = 1900;
+        new int Height = 1080;
         private void baseForm_Load(object sender, EventArgs e)
         {
+            Rectangle ClientCoz = new Rectangle();
+            ClientCoz = Screen.GetBounds(ClientCoz);
+            float WidthOran = ((float)ClientCoz.Width / (float)Width);
+            float HeightOran = ((float)ClientCoz.Height / (float)Height);
+            this.Scale(WidthOran, HeightOran);
             try
             {
                 baglanti = new Baglanti("127.0.0.1",8888);

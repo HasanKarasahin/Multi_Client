@@ -49,10 +49,15 @@ namespace _211117_Form_Client
                 }
             }
         }
-
+        new int Width = 1900;
+        new int Height = 1080;
         private void login_Load(object sender, EventArgs e)
         {
-
+            Rectangle ClientCoz = new Rectangle();
+            ClientCoz = Screen.GetBounds(ClientCoz);
+            float WidthOran = ((float)ClientCoz.Width / (float)Width);
+            float HeightOran = ((float)ClientCoz.Height / (float)Height);
+            this.Scale(WidthOran, HeightOran);
         }
     }
 }

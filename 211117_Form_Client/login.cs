@@ -28,7 +28,7 @@ namespace _211117_Form_Client
         private void textBox2_Click(object sender, EventArgs e)
         {
             txt_sifre.Clear();
-            txt_sifre.PasswordChar = '*';
+           
         }
 
         private void btn_giris_Click(object sender, EventArgs e)

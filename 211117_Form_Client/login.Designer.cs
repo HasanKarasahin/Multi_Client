@@ -134,6 +134,7 @@
             this.txt_sifre.ForeColor = System.Drawing.Color.Black;
             this.txt_sifre.Location = new System.Drawing.Point(31, 238);
             this.txt_sifre.Name = "txt_sifre";
+            this.txt_sifre.PasswordChar = '*';
             this.txt_sifre.Size = new System.Drawing.Size(239, 45);
             this.txt_sifre.TabIndex = 5;
             this.txt_sifre.Text = "Password";

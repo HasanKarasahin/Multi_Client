@@ -2,7 +2,7 @@
 
 Soketler için istemci (Client) ve sunucu (Server) arasýndaki baðlantýnýn saðlanmasý için olan bir iletiþim kanalý diyebiliriz. Yaþam döngüsünü basitçe tarif etmek gerekirse, sunucu önceden belirlenen portu dinler, istemci ise bu porta mesaj gönderir.
 
-
+![ss](https://user-images.githubusercontent.com/16051653/54145782-b6ae1080-443f-11e9-8a7b-283c94924031.png)
  
 
 # Uygulama Nasýl Çalýþýyor?

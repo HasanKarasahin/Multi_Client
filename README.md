@@ -1,24 +1,28 @@
 # Soket Nedir?
 
-Soketler için istemci (Client) ve sunucu (Server) arasındaki bağlantının sağlanması için olan bir iletişim kanalı diyebiliriz. Yaşam döngüsünü basitçe tarif etmek gerekirse, sunucu önceden belirlenen portu dinler, istemci ise bu porta mesaj gönderir.
+Soketler iÃ§in istemci (Client) ve sunucu (Server) arasÄ±ndaki baÄŸlantÄ±nÄ±n saÄŸlanmasÄ± iÃ§in olan bir iletiÅŸim kanalÄ± diyebiliriz. YaÅŸam dÃ¶ngÃ¼sÃ¼nÃ¼ basitÃ§e tarif etmek gerekirse, sunucu Ã¶nceden belirlenen portu dinler, istemci ise bu porta mesaj gÃ¶nderir.
 
-![ss](https://user-images.githubusercontent.com/16051653/54145782-b6ae1080-443f-11e9-8a7b-283c94924031.png)
+<p align="center">
+  <img width="460" height="300" src="![ss](https://user-images.githubusercontent.com/16051653/54145782-b6ae1080-443f-11e9-8a7b-283c94924031.png)">
+</p>
+
+
  
 
-# Uygulama Nasıl Çalışıyor?
+# Uygulama NasÄ±l Ã‡alÄ±ÅŸÄ±yor?
 
-Uygulama iki projeden oluşmakta. Server ve Clint(lar) olmak üzere iki adet dir. Server , kod içerisinde belirtilmiş iki kritik parametre vardır. İp ve Port. İp bize bulunduğumuz makinenin yani server olarak kullanacağımız makinen ip adresidir. Port ise dinlenecek bir dış bağlantı numarası diyebiliriz. Ortak bir ip ve port üzerinde anlaşma sağlanırsa iletişim doğru şekilde sağlanır.
+Uygulama iki projeden oluÅŸmakta. Server ve Clint(lar) olmak Ã¼zere iki adet dir. Server , kod iÃ§erisinde belirtilmiÅŸ iki kritik parametre vardÄ±r. Ä°p ve Port. Ä°p bize bulunduÄŸumuz makinenin yani server olarak kullanacaÄŸÄ±mÄ±z makinen ip adresidir. Port ise dinlenecek bir dÄ±ÅŸ baÄŸlantÄ± numarasÄ± diyebiliriz. Ortak bir ip ve port Ã¼zerinde anlaÅŸma saÄŸlanÄ±rsa iletiÅŸim doÄŸru ÅŸekilde saÄŸlanÄ±r.
 
-Client ise dinlemeye başlayan server ‘ a bağlantı isteği gönderip başarılı olursa iletişim e hazır hale gelir. Bağlı olan her cliente yeni bağlantı ile birlikte güncel online kişi listesi gönderilir. Kişi listesi üzerinden ilgili kişiye server üzerinden mesaj gönderip alabiliriz. Mesajlarda Her Client ‘ ın lokalinde tutulduğu için eski mesajlarda saklanmaktadır.
-
-
-# Server Client ‘ a nasıl Güncel Listeyi İletiyor?
-
-Serverda yeni bağlantı sağlandıktan sonra client ‘ ın ilk mesajı kullanıcı adını göndermek oluyor. Gelen bu mesajı alıp istemci listemize ekliyoruz. Listedeki tüm clientları gezip her birine kendisi hariç istemci listesini gönderiyoruz.
-
-Gönderilen mesajın normal mesajdan farkı **3$\*$\*3** ile başlıyor olması. Her Clint arasında da $ işareti belirttiğimizden Client aldığı mesajı split ederken **$** işaretinden faydalanarak düzgün ve doğru parçalayabilecektir.
+Client ise dinlemeye baÅŸlayan server â€˜ a baÄŸlantÄ± isteÄŸi gÃ¶nderip baÅŸarÄ±lÄ± olursa iletiÅŸim e hazÄ±r hale gelir. BaÄŸlÄ± olan her cliente yeni baÄŸlantÄ± ile birlikte gÃ¼ncel online kiÅŸi listesi gÃ¶nderilir. KiÅŸi listesi Ã¼zerinden ilgili kiÅŸiye server Ã¼zerinden mesaj gÃ¶nderip alabiliriz. Mesajlarda Her Client â€˜ Ä±n lokalinde tutulduÄŸu iÃ§in eski mesajlarda saklanmaktadÄ±r.
 
 
-# Client Server ‘ a kişiye özel mesajı nasıl gönderiyor?
+# Server Client â€˜ a nasÄ±l GÃ¼ncel Listeyi Ä°letiyor?
 
-Client seçtiği kişiye mesajını **gönderilecek KisininAdi + "..444.." +İlgili Client ın Kullanıcı Adı+" : "+Gönderilen Mesaj** şeklinde hazırlayıp gönderiyor. Serverda nu parametreleri düzgün parçalayıp böldükten sonra listeden bulduğu Client a mesajı iletiyor.
+Serverda yeni baÄŸlantÄ± saÄŸlandÄ±ktan sonra client â€˜ Ä±n ilk mesajÄ± kullanÄ±cÄ± adÄ±nÄ± gÃ¶ndermek oluyor. Gelen bu mesajÄ± alÄ±p istemci listemize ekliyoruz. Listedeki tÃ¼m clientlarÄ± gezip her birine kendisi hariÃ§ istemci listesini gÃ¶nderiyoruz.
+
+GÃ¶nderilen mesajÄ±n normal mesajdan farkÄ± **3$\*$\*3** ile baÅŸlÄ±yor olmasÄ±. Her Clint arasÄ±nda da $ iÅŸareti belirttiÄŸimizden Client aldÄ±ÄŸÄ± mesajÄ± split ederken **$** iÅŸaretinden faydalanarak dÃ¼zgÃ¼n ve doÄŸru parÃ§alayabilecektir.
+
+
+# Client Server â€˜ a kiÅŸiye Ã¶zel mesajÄ± nasÄ±l gÃ¶nderiyor?
+
+Client seÃ§tiÄŸi kiÅŸiye mesajÄ±nÄ± **gÃ¶nderilecek KisininAdi + "..444.." +Ä°lgili Client Ä±n KullanÄ±cÄ± AdÄ±+" : "+GÃ¶nderilen Mesaj** ÅŸeklinde hazÄ±rlayÄ±p gÃ¶nderiyor. Serverda nu parametreleri dÃ¼zgÃ¼n parÃ§alayÄ±p bÃ¶ldÃ¼kten sonra listeden bulduÄŸu Client a mesajÄ± iletiyor.

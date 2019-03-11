@@ -48,20 +48,17 @@
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(190)))), ((int)(((byte)(165)))));
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(798, 186);
+            this.panel1.Size = new System.Drawing.Size(338, 186);
             this.panel1.TabIndex = 0;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(751, 3);
+            this.button1.Location = new System.Drawing.Point(286, 12);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(44, 28);
             this.button1.TabIndex = 4;
@@ -74,9 +71,9 @@
             this.panel3.BackColor = System.Drawing.Color.Silver;
             this.panel3.Controls.Add(this.pictureBox1);
             this.panel3.Controls.Add(this.grb_kisi);
-            this.panel3.Location = new System.Drawing.Point(30, 54);
+            this.panel3.Location = new System.Drawing.Point(6, 46);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(735, 74);
+            this.panel3.Size = new System.Drawing.Size(326, 74);
             this.panel3.TabIndex = 3;
             // 
             // pictureBox1
@@ -95,40 +92,38 @@
             this.grb_kisi.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.grb_kisi.Location = new System.Drawing.Point(81, 14);
             this.grb_kisi.Name = "grb_kisi";
-            this.grb_kisi.Size = new System.Drawing.Size(0, 31);
+            this.grb_kisi.Size = new System.Drawing.Size(92, 31);
             this.grb_kisi.TabIndex = 0;
+            this.grb_kisi.Text = "Necati";
             // 
             // rtx_msjlar
             // 
             this.rtx_msjlar.BackColor = System.Drawing.Color.Ivory;
             this.rtx_msjlar.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.rtx_msjlar.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.rtx_msjlar.Location = new System.Drawing.Point(30, 128);
+            this.rtx_msjlar.Location = new System.Drawing.Point(6, 120);
             this.rtx_msjlar.Name = "rtx_msjlar";
-            this.rtx_msjlar.Size = new System.Drawing.Size(735, 516);
+            this.rtx_msjlar.Size = new System.Drawing.Size(326, 270);
             this.rtx_msjlar.TabIndex = 1;
             this.rtx_msjlar.Text = "";
             // 
             // panel2
             // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.Silver;
             this.panel2.Controls.Add(this.btn_msj_gndr);
             this.panel2.Controls.Add(this.txt_msj);
             this.panel2.Controls.Add(this.shapeContainer1);
-            this.panel2.Location = new System.Drawing.Point(30, 643);
+            this.panel2.Location = new System.Drawing.Point(6, 396);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(735, 74);
+            this.panel2.Size = new System.Drawing.Size(326, 63);
             this.panel2.TabIndex = 2;
             // 
             // btn_msj_gndr
             // 
             this.btn_msj_gndr.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btn_msj_gndr.Location = new System.Drawing.Point(642, 11);
+            this.btn_msj_gndr.Location = new System.Drawing.Point(236, 19);
             this.btn_msj_gndr.Name = "btn_msj_gndr";
-            this.btn_msj_gndr.Size = new System.Drawing.Size(90, 49);
+            this.btn_msj_gndr.Size = new System.Drawing.Size(90, 36);
             this.btn_msj_gndr.TabIndex = 2;
             this.btn_msj_gndr.Text = "GÖNDER";
             this.btn_msj_gndr.UseVisualStyleBackColor = true;
@@ -140,7 +135,7 @@
             this.txt_msj.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.txt_msj.Location = new System.Drawing.Point(7, 19);
             this.txt_msj.Name = "txt_msj";
-            this.txt_msj.Size = new System.Drawing.Size(629, 33);
+            this.txt_msj.Size = new System.Drawing.Size(203, 33);
             this.txt_msj.TabIndex = 1;
             // 
             // shapeContainer1
@@ -150,7 +145,7 @@
             this.shapeContainer1.Name = "shapeContainer1";
             this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
             this.rectangleShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(735, 74);
+            this.shapeContainer1.Size = new System.Drawing.Size(326, 63);
             this.shapeContainer1.TabIndex = 0;
             this.shapeContainer1.TabStop = false;
             // 
@@ -170,7 +165,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ClientSize = new System.Drawing.Size(798, 717);
+            this.ClientSize = new System.Drawing.Size(342, 461);
             this.ControlBox = false;
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.rtx_msjlar);

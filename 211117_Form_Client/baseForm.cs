@@ -3,8 +3,6 @@ using System.Windows.Forms;
 using System.Text;
 using System.Net.Sockets;
 using System.Threading;
-using System.IO;
-using System.Drawing;
 
 namespace _211117_Form_Client
 {
@@ -27,10 +25,10 @@ namespace _211117_Form_Client
         private void baseForm_Load(object sender, EventArgs e)
         {
             try
-            {//
+            {
                 baglanti = new Baglanti("192.168.43.92",8888);
                 istemci=baglanti.getIstemci();
-                 baglanti.getserverAkim();              
+                baglanti.getserverAkim();              
                 SV = new ServeraYolla(baglanti.getserverAkim());
                 SV.servera_yolla(kullanici_adi); //servara ben geldim diyoruz.
                 ctThread = new Thread(gelenmesaj);
@@ -38,9 +36,9 @@ namespace _211117_Form_Client
                 io = new DosyaIslemleri(this, kullanici_adi);
                 io.dosyaOlustur();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Servera Baglanirken Hata OLustu. ");
+                MessageBox.Show("Servera Baglanirken Hata OLustu. "+ex);
                 this.Close();
             }
             sl = new Sol();
@@ -114,8 +112,9 @@ namespace _211117_Form_Client
                 
             }
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             this.Opacity = 0;
-        }}}}
+        }
+    }
+}

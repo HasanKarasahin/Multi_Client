@@ -21,10 +21,18 @@ namespace _211117_Form_Client
         }
         public void servera_yolla(string mesaj)
         {
-            Console.Write("Mesaj Geldi  :  "+mesaj);
-            byte[] readByte = Encoding.ASCII.GetBytes(mesaj); // Kullanici adimizi/mesajımızı byte[] ceviriyoruz.
-            serverAkim.Write(readByte, 0, readByte.Length); // Servera byte[] yolluyoruz.
-            serverAkim.Flush();  // Akimi temizliyoruz.
+            try
+            {
+                Console.Write("Mesaj Geldi  :  " + mesaj);
+                byte[] readByte = Encoding.ASCII.GetBytes(mesaj); // Kullanici adimizi/mesajımızı byte[] ceviriyoruz.
+                serverAkim.Write(readByte, 0, readByte.Length); // Servera byte[] yolluyoruz.
+                serverAkim.Flush();  // Akimi temizliyoruz.
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Hata Oluştu:servera_yolla()");
+                throw ex;
+            }
         }
     }
 }

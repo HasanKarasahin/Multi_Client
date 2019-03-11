@@ -13,7 +13,7 @@ namespace _211117_Form_Client
         private NetworkStream serverAkim;
         public Baglanti(string ip,int port)
         {
-            istemci.Connect(ip, port);
+            istemci.Connect("127.0.0.1", 8888);
             serverAkim = getIstemci().GetStream();
         }
         public TcpClient getIstemci()

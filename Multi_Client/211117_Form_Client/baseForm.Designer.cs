@@ -38,8 +38,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.btn_msj_gndr = new System.Windows.Forms.Button();
             this.txt_msj = new System.Windows.Forms.TextBox();
-            this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.rectangleShape1 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -112,7 +110,6 @@
             this.panel2.BackColor = System.Drawing.Color.Silver;
             this.panel2.Controls.Add(this.btn_msj_gndr);
             this.panel2.Controls.Add(this.txt_msj);
-            this.panel2.Controls.Add(this.shapeContainer1);
             this.panel2.Location = new System.Drawing.Point(6, 396);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(326, 63);
@@ -137,27 +134,6 @@
             this.txt_msj.Name = "txt_msj";
             this.txt_msj.Size = new System.Drawing.Size(203, 33);
             this.txt_msj.TabIndex = 1;
-            // 
-            // shapeContainer1
-            // 
-            this.shapeContainer1.Location = new System.Drawing.Point(0, 0);
-            this.shapeContainer1.Margin = new System.Windows.Forms.Padding(0);
-            this.shapeContainer1.Name = "shapeContainer1";
-            this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
-            this.rectangleShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(326, 63);
-            this.shapeContainer1.TabIndex = 0;
-            this.shapeContainer1.TabStop = false;
-            // 
-            // rectangleShape1
-            // 
-            this.rectangleShape1.BackColor = System.Drawing.Color.White;
-            this.rectangleShape1.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
-            this.rectangleShape1.BorderColor = System.Drawing.Color.White;
-            this.rectangleShape1.CornerRadius = 4;
-            this.rectangleShape1.Location = new System.Drawing.Point(7, 11);
-            this.rectangleShape1.Name = "rectangleShape1";
-            this.rectangleShape1.Size = new System.Drawing.Size(630, 48);
             // 
             // baseForm
             // 
@@ -189,8 +165,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
-        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
-        private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShape1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button1;
         public System.Windows.Forms.RichTextBox rtx_msjlar;
